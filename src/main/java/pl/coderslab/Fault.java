@@ -17,9 +17,7 @@ public class Fault {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @NotNull
-    private Building building;
+
 
     @ManyToOne
     @NotNull

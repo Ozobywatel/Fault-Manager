@@ -3,10 +3,7 @@ package pl.coderslab;
 import lombok.Data;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 @Entity
 @Data
@@ -26,14 +23,16 @@ public class Building {
     @NotEmpty
     @Size(max = 2000)
     @Size(min = 1)
-    private int maxUnits;
-    @NotEmpty
+    private int maxUnitNumber;
+    @NotNull
     @Size(max = 2000)
     @Size(min = 1)
-    private int minUnits;
-    private String streetName;
-    private String streetNumber;
-    private String city;
-    private String country;
+    private int minUnitNumber;
+    private String addressStreet;
+    private String addressNumber;
+    private String addressCity;
+    @Pattern(regexp = "[0-9]{2}-[0-9]{3}")
+    private String addressZipCode;
+    private String addressCountry;
 
 }
