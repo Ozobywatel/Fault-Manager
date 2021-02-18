@@ -1,4 +1,4 @@
-package pl.coderslab;
+package pl.coderslab.model;
 
 import lombok.Data;
 
@@ -6,7 +6,6 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.text.DateFormat;
 
 @Entity
 @Data
