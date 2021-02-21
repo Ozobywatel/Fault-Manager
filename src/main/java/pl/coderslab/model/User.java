@@ -1,6 +1,7 @@
 package pl.coderslab.model;
 
 import lombok.Data;
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -28,5 +29,11 @@ public class User {
     @NotBlank
     private DateFormat created;
 
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = BCrypt.hashpw(password, BCrypt.gensalt());
+    }
 }
