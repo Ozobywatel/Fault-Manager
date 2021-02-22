@@ -1,5 +1,6 @@
 package pl.coderslab.service;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 import pl.coderslab.model.User;
 import pl.coderslab.repository.UserRepository;
@@ -7,6 +8,7 @@ import pl.coderslab.repository.UserRepository;
 import java.util.List;
 import java.util.Optional;
 
+@Primary
 @Repository
 public class JpaUserService implements UserService {
 

@@ -20,7 +20,7 @@
             rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="<c:url value="../theme/css/sb-admin-2.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="../../theme/css/sb-admin-2.min.css"/>" rel="stylesheet">
 
 </head>
 <body id="page-top">
@@ -36,7 +36,7 @@
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+            <div class="sidebar-brand-text mx-3">Fault Manager <sup>n</sup></div>
         </a>
 
         <!-- Divider -->
@@ -46,7 +46,7 @@
         <li class="nav-item active">
             <a class="nav-link" href="list.jsp">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
+                <span>View all users</span></a>
         </li>
 
 

@@ -9,7 +9,6 @@ import javax.validation.constraints.NotNull;
 import java.text.DateFormat;
 
 @Entity
-@Data
 @Table(name = "users")
 public class User {
 
@@ -29,11 +28,72 @@ public class User {
     @NotBlank
     private DateFormat created;
 
+    public User() {
+    }
+
+    public User(Long id, @NotBlank String firstName, @NotBlank String lastName, @NotBlank String email, @NotBlank String password, @NotNull boolean adminRole, @NotBlank DateFormat created) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.adminRole = adminRole;
+        this.created = created;
+    }
+
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = BCrypt.hashpw(password, BCrypt.gensalt());
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public boolean isAdminRole() {
+        return adminRole;
+    }
+
+    public void setAdminRole(boolean adminRole) {
+        this.adminRole = adminRole;
+    }
+
+    public DateFormat getCreated() {
+        return created;
+    }
+
+    public void setCreated(DateFormat created) {
+        this.created = created;
     }
 }
