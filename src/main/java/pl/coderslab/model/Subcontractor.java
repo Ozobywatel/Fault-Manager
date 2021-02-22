@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.text.DateFormat;
+import java.time.LocalDate;
 
 @Entity
 @Data
@@ -22,7 +23,7 @@ public class Subcontractor {
     @NotBlank
     private String contractNumber;
     @NotBlank
-    private DateFormat contractDate;
+    private LocalDate contractDate;
     @NotBlank
     private String email;
     @NotBlank

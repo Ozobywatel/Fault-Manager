@@ -1,4 +1,4 @@
-<jsp:include page="WEB-INF/views/header.jsp" />
+<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -28,6 +28,7 @@
                     <th>Id</th>
                     <th>Email</th>
                     <th>First name</th>
+                    <th>Last name</th>
                     <th>Action</th>
                 </tr>
                 </thead>
@@ -36,6 +37,7 @@
                     <th>Id</th>
                     <th>Email</th>
                     <th>First name</th>
+                    <th>Last name</th>
                     <th>Action</th>
                 </tr>
                 </tfoot>
@@ -45,6 +47,7 @@
                         <td>${user.id}</td>
                         <td>${user.email}</td>
                         <td>${user.firstName}</td>
+                        <td>${user.lastName}</td>
                         <td>
                             <a href="<c:url value="/user/removeUser?id=${user.id}"/>"
                                class="btn btn-danger rounded-0 text-light m-1">Delete</a>
@@ -64,4 +67,4 @@
 
 
 
-<jsp:include page="WEB-INF/views/footer.jsp" />
+<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>

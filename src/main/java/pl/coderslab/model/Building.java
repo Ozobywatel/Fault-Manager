@@ -17,7 +17,7 @@ public class Building {
     @NotNull
     private Project project;
     @NotBlank
-    private String budildingName;
+    private String buildingName;
     @NotBlank
     private String buildingNumber;
     @NotEmpty

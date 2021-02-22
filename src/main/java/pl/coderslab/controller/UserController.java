@@ -4,10 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import pl.coderslab.model.User;
 import pl.coderslab.service.UserService;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -23,7 +23,13 @@ public class UserController {
     @GetMapping("/all")
     public String showUsers(Model model) {
         List<User> users = userService.getUsers();
-        model.addAttribute("users", users);
+       model.addAttribute("users", users);
         return "users/all";
+    }
+
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    public String showAddUserForm(Model model) {
+        model.addAttribute("user", new User());
+        return "users/add";
     }
 }

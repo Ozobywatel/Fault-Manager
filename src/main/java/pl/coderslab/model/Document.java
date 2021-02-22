@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.text.DateFormat;
+import java.time.LocalDate;
 
 @Entity
 @Data
@@ -16,13 +17,14 @@ public class Document {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank
+    @Enumerated(EnumType.STRING)
     private DocumentType documentType;
     @NotBlank
-    private DateFormat created;
+    private LocalDate created;
     @NotBlank
-    private DateFormat updated;
+    private LocalDate updated;
     @NotBlank
-    private DateFormat expirationDate;
+    private LocalDate expirationDate;
     @ManyToOne
     @NotNull
     private Building building;

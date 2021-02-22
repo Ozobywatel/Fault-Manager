@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.text.DateFormat;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "users")
@@ -26,12 +27,12 @@ public class User {
     @NotNull
     private boolean adminRole;
     @NotBlank
-    private DateFormat created;
+    private LocalDate created;
 
     public User() {
     }
 
-    public User(Long id, @NotBlank String firstName, @NotBlank String lastName, @NotBlank String email, @NotBlank String password, @NotNull boolean adminRole, @NotBlank DateFormat created) {
+    public User(Long id, @NotBlank String firstName, @NotBlank String lastName, @NotBlank String email, @NotBlank String password, @NotNull boolean adminRole, @NotBlank LocalDate created) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -89,11 +90,11 @@ public class User {
         this.adminRole = adminRole;
     }
 
-    public DateFormat getCreated() {
+    public LocalDate getCreated() {
         return created;
     }
 
-    public void setCreated(DateFormat created) {
+    public void setCreated(LocalDate created) {
         this.created = created;
     }
 }
