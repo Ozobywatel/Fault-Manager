@@ -26,13 +26,12 @@ public class User {
     private String password;
     @NotNull
     private boolean adminRole;
-    @NotBlank
     private LocalDate created;
 
     public User() {
     }
 
-    public User(Long id, @NotBlank String firstName, @NotBlank String lastName, @NotBlank String email, @NotBlank String password, @NotNull boolean adminRole, @NotBlank LocalDate created) {
+    public User(Long id, @NotBlank String firstName, @NotBlank String lastName, @NotBlank String email, @NotBlank String password, @NotNull boolean adminRole, LocalDate created) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -96,5 +95,14 @@ public class User {
 
     public void setCreated(LocalDate created) {
         this.created = created;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "adminRole=" + adminRole +
+                ", created=" + created +
+                ", firstName=" + firstName +
+                '}';
     }
 }

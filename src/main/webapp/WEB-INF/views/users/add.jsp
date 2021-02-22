@@ -2,69 +2,64 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 
-<div class="container-fluid">
-
-
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">All users</h1>
-        <a href='<c:url value="/user/add"/>' class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-download fa-sm text-white-50"></i> Add new user </a>
-
+<div class="form-group">
+    <div class="col-sm-6">
+        <h1 class="h4 text-gray-900 mb-4">Create new Account!</h1>
     </div>
-
-
 </div>
-<div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Users list</h6>
-    </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Email</th>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Action</th>
-                </tr>
-                </thead>
-                <tfoot>
-                <tr>
-                    <th>Id</th>
-                    <th>Email</th>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Action</th>
-                </tr>
-                </tfoot>
-                <tbody>
-                <c:forEach items="${users}" var="user">
-                    <tr>
-                        <td>${user.id}</td>
-                        <td>${user.email}</td>
-                        <td>${user.firstName}</td>
-                        <td>${user.lastName}</td>
-                        <td>
-                            <a href="<c:url value="/user/removeUser?id=${user.id}"/>"
-                               class="btn btn-danger rounded-0 text-light m-1">Delete</a>
-                            <a href="<c:url value="/user/details?id=${user.id}"/>"
-                               class="btn btn-info rounded-0 text-light m-1">Details</a>
-                            <a href="<c:url value="/user/edit?id=${user.id}"/>"
-                               class="btn btn-warning rounded-0 text-light m-1">Edit</a>
-                        </td>
-
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
+<form:form method="post"
+           modelAttribute="user">
+    <div class="form-group">
+        <div class="col-sm-6">
+            <h5>First name:</h5>
+            <form:input type="text" class="form-control form-control-user" path="firstName"
+                        placeholder="Matt"/>
+            <form:errors path="firstName"/><br/>
         </div>
     </div>
-</div>
+    <div class="form-group">
+        <div class="col-sm-6">
+            <h5>Last name:</h5>
+            <form:input type="text" class="form-control form-control-user" path="lastName"
+                        placeholder="Damon"/>
+            <form:errors path="lastName"/><br/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-6">
+            <h5>e-mail address:</h5>
+            <form:input type="email" class="form-control form-control-user" path="email"
+                        placeholder="matt.damon@gmail.com"/>
+            <form:errors path="email"/><br/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-6">
+            <h5>password:</h5>
+            <form:input type="password" class="form-control form-control-user" path="password"
+                        placeholder="password"/>
+            <form:errors path="password"/><br/>
+        </div>
+    </div>
+    <br/>
+    <div class="form-group">
+        <div class="col-sm-6">
+            <h5> <form:checkbox path="adminRole"/>Do you want to new user had access to admin panel?</h5>
 
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <button type="submit" class="btn btn-primary btn-user btn-block" value="Save">
+                Register Account
+            </button>
+        </div>
+    </div>
+</form:form>
+<hr>
 
 
 <jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>

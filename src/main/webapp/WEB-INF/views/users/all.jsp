@@ -9,7 +9,7 @@
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">All users</h1>
-        <a href='<c:url value="/user/add"/>' class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+        <a href='<c:url value="/admin/users/add"/>' class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-download fa-sm text-white-50"></i> Add new user </a>
 
     </div>
@@ -49,11 +49,11 @@
                         <td>${user.firstName}</td>
                         <td>${user.lastName}</td>
                         <td>
-                            <a href="<c:url value="/user/removeUser?id=${user.id}"/>"
+                            <a href="<c:url value="/admin/users/${user.id}"/>"
                                class="btn btn-danger rounded-0 text-light m-1">Delete</a>
-                            <a href="<c:url value="/user/details?id=${user.id}"/>"
+                            <a href="<c:url value="/admin/users/${user.id}"/>"
                                class="btn btn-info rounded-0 text-light m-1">Details</a>
-                            <a href="<c:url value="/user/edit?id=${user.id}"/>"
+                            <a href="<c:url value="/admin/users/${user.id}"/>"
                                class="btn btn-warning rounded-0 text-light m-1">Edit</a>
                         </td>
 
