@@ -20,7 +20,7 @@
             rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="<c:url value="../../theme/css/sb-admin-2.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="/theme/css/sb-admin-2.min.css"/>" rel="stylesheet">
 
 </head>
 <body id="page-top">

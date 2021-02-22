@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import pl.coderslab.model.User;
 import pl.coderslab.service.UserService;
 
+import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
 import java.awt.print.Book;
 import java.time.LocalDate;
@@ -62,5 +63,18 @@ public class UserController {
         }
         userService.add(user);
         return "redirect:/admin/users/all";
+    }
+
+
+    @GetMapping("/delete/{id}")
+    public String deleteUser(Model model, @PathVariable long id) {
+        userService.delete(id);
+        return "redirect:/admin/users/all";
+    }
+
+    @GetMapping("/details/{id}")
+    public String showUser(Model model, @PathVariable long id) {
+        model.addAttribute("user", userService.get(id).orElseThrow(EntityNotFoundException::new));
+        return "users/details";
     }
 }

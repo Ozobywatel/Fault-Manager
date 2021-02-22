@@ -8,15 +8,8 @@
 
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">All users list</h1>
+        <h1 class="h3 mb-0 text-gray-800">User ${lastName} details:</h1>
         <div class="my-2"></div>
-        <a href='<c:url value="/admin/users/add"/>' class="btn btn-secondary btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-arrow-right"></i>
-                                        </span>
-            <span class="text"> Add new user </span>
-        </a>
-
     </div>
 
 
@@ -31,39 +24,28 @@
                     <th>Email</th>
                     <th>First name</th>
                     <th>Last name</th>
+                    <th>Creation date</th>
+                    <th>Admin? (true/false)</th>
                     <th>Action</th>
                 </tr>
                 </thead>
-                <tfoot>
-                <tr>
-                    <th>Id</th>
-                    <th>Email</th>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Action</th>
-                </tr>
-                </tfoot>
                 <tbody>
-                <c:forEach items="${users}" var="user">
+
                     <tr>
-                        <td>${user.id}</td>
-                        <td>${user.email}</td>
-                        <td>${user.firstName}</td>
-                        <td>${user.lastName}</td>
+                        <td><c:out value="${user.id}"/></td>
+                        <td><c:out value="${user.email}"/></td>
+                        <td><c:out value="${user.firstName}"/></td>
+                        <td><c:out value="${user.lastName}"/></td>
+                        <td><c:out value="${user.created}"/></td>
+                        <td><c:out value="${user.adminRole}"/></td>
                         <td>
-                            <a href="<c:url value="/admin/users/details/${user.id}"/>" class="btn btn-info btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-info-circle"></i>
-                                        </span>
-                                <span class="text">Details</span>
-                            </a>
                             <a href="<c:url value="/admin/users/edit/${user.id}"/>" class="btn btn-warning btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-arrow-right"></i>
                                         </span>
                                 <span class="text">Edit</span>
                             </a>
-                            <a href="<c:url value="/admin/users/delete/${user.id}"/>" class="btn btn-danger btn-icon-split">
+                            <a href="<c:url value="/admin/users/${user.id}"/>" class="btn btn-danger btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-trash"></i>
                                         </span>
@@ -71,12 +53,12 @@
                             </a>
                         </td>
                     </tr>
-                </c:forEach>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+
 
 
 <%@ include file="/WEB-INF/views/admin-footer.jsp" %>

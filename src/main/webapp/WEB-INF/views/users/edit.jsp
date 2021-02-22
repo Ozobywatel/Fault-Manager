@@ -1,4 +1,4 @@
-<jsp:include page="/WEB-INF/views/admin-header.jsp"></jsp:include>
+<%@ include file="/WEB-INF/views/admin-header.jsp" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -59,4 +59,4 @@
 <hr>
 
 
-<jsp:include page="/WEB-INF/views/admin-footer.jsp"></jsp:include>
+<%@ include file="/WEB-INF/views/admin-footer.jsp" %>
