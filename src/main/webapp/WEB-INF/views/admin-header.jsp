@@ -57,12 +57,17 @@
         <li class="nav-item active">
             <a href='<c:url value="/admin/users/all"/>' class="nav-link" >
                 <i class="fas fa-fw fa-table"></i>
-                <span>View all users</span></a>
+                <span>Users</span></a>
         </li>
         <li class="nav-item active">
             <a href='<c:url value="/admin/subcontractors/all"/>' class="nav-link" >
                 <i class="fas fa-fw fa-table"></i>
-                <span>View all subcontractors</span></a>
+                <span>Subcontractors</span></a>
+        </li>
+        <li class="nav-item active">
+            <a href='<c:url value="/admin/projects/all"/>' class="nav-link" >
+                <i class="fas fa-fw fa-table"></i>
+                <span>Projects</span></a>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
