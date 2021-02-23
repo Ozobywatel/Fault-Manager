@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="newauthor">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>F. Manager - Admin Panel</title>
 
     <!-- Custom fonts for this template-->
     <link href="<c:url value="/theme/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet" type="text/css">
@@ -38,7 +38,7 @@
         <li class="nav-item active">
             <a class="nav-link" href='<c:url value="/app/main"/>'>
 
-                <span><i class="fas fa-arrow-right"></i>Fault manager</span></a>
+                <span><i class="fas fa-arrow-right"></i>Back to Fault manager</span></a>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">

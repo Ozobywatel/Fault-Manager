@@ -7,6 +7,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.text.DateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -20,11 +21,11 @@ public class Document {
     @Enumerated(EnumType.STRING)
     private DocumentType documentType;
     @NotBlank
-    private LocalDate created;
+    private LocalDateTime created;
     @NotBlank
-    private LocalDate updated;
+    private LocalDateTime updated;
     @NotBlank
-    private LocalDate expirationDate;
+    private LocalDateTime expirationDate;
     @ManyToOne
     @NotNull
     private Building building;

@@ -1,6 +1,7 @@
 package pl.coderslab.model;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -22,7 +23,7 @@ public class Subcontractor {
     private String scope;
     @NotBlank
     private String contractNumber;
-    @NotBlank
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate contractDate;
     @NotBlank
     private String email;
