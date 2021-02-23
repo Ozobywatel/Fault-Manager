@@ -2,45 +2,45 @@ package pl.coderslab.service;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
-import pl.coderslab.model.User;
-import pl.coderslab.repository.UserRepository;
+import pl.coderslab.model.Project;
+import pl.coderslab.repository.ProjectRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 @Primary
 @Repository
-public class JpaProjectService implements UserService {
+public class JpaProjectService implements ProjectService {
 
-    private final UserRepository userRepository;
+    private final ProjectRepository projectRepository;
 
-    public JpaProjectService(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public JpaProjectService(ProjectRepository projectRepository) {
+        this.projectRepository = projectRepository;
     }
 
     @Override
-    public List<User> getUsers() {
-        return userRepository.findAll();
+    public List<Project> getProjects() {
+        return projectRepository.findAll();
     }
 
     @Override
-    public void add(User user) {
-        userRepository.save(user);
+    public void add(Project project) {
+        projectRepository.save(project);
     }
 
     @Override
-    public Optional<User> get(Long id) {
-        return userRepository.findById(id);
+    public Optional<Project> get(Long id) {
+        return projectRepository.findById(id);
     }
 
     @Override
     public void delete(Long id) {
-        userRepository.deleteById(id);
+        projectRepository.deleteById(id);
     }
 
     @Override
-    public void update(User user) {
-        userRepository.save(user);
+    public void update(Project project) {
+        projectRepository.save(project);
     }
 
 }

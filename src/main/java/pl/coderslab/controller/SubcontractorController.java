@@ -54,7 +54,7 @@ public class SubcontractorController {
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
-    public String editBook(@Valid Subcontractor subcontractor, BindingResult result) {
+    public String editSubcontractor(@Valid Subcontractor subcontractor, BindingResult result) {
         if (result.hasErrors()) {
             return "subcontractors/edit";
         }
