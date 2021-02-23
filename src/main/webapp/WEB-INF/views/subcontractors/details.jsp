@@ -8,7 +8,7 @@
 
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">User ${lastName} details:</h1>
+        <h1 class="h3 mb-0 text-gray-800">Subcontractor <c:out value="${subcontractor.companyName}"/> details:</h1>
         <div class="my-2"></div>
     </div>
 
@@ -21,31 +21,33 @@
                 <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Email</th>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Creation date</th>
-                    <th>Admin? (true/false)</th>
+                    <th>Company name</th>
+                    <th>Company's scope/responsibilities</th>
+                    <th>email</th>
+                    <th>Contract number</th>
+                    <th>Contract date</th>
+                    <th>Subcontractor details</th>
                     <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
 
                     <tr>
-                        <td><c:out value="${user.id}"/></td>
-                        <td><c:out value="${user.email}"/></td>
-                        <td><c:out value="${user.firstName}"/></td>
-                        <td><c:out value="${user.lastName}"/></td>
-                        <td><c:out value="${user.created}"/></td>
-                        <td><c:out value="${user.adminRole}"/></td>
+                        <td><c:out value="${subcontractor.id}"/></td>
+                        <td><c:out value="${subcontractor.companyName}"/></td>
+                        <td><c:out value="${subcontractor.scope}"/></td>
+                        <td><c:out value="${subcontractor.email}"/></td>
+                        <td><c:out value="${subcontractor.contractNumber}"/></td>
+                        <td><c:out value="${subcontractor.contractDate}"/></td>
+                        <td><c:out value="${subcontractor.details}"/></td>
                         <td>
-                            <a href="<c:url value="/admin/users/edit/${user.id}"/>" class="btn btn-warning btn-icon-split">
+                            <a href="<c:url value="/admin/subcontractors/edit/${subcontractor.id}"/>" class="btn btn-warning btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-arrow-right"></i>
                                         </span>
                                 <span class="text">Edit</span>
                             </a>
-                            <a href="<c:url value="/admin/users/${user.id}"/>" class="btn btn-danger btn-icon-split">
+                            <a href="<c:url value="/admin/subcontractors/delete/${subcontractor.id}"/>" class="btn btn-danger btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-trash"></i>
                                         </span>

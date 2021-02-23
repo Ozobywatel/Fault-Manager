@@ -59,6 +59,11 @@
                 <i class="fas fa-fw fa-table"></i>
                 <span>View all users</span></a>
         </li>
+        <li class="nav-item active">
+            <a href='<c:url value="/admin/subcontractors/all"/>' class="nav-link" >
+                <i class="fas fa-fw fa-table"></i>
+                <span>View all subcontractors</span></a>
+        </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 

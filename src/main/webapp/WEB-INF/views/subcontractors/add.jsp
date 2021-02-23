@@ -55,7 +55,7 @@
         <div class="col-sm-6">
             <h5>Subcontractor Details:</h5>
             <form:input type="text" class="form-control form-control-user" path="details"
-                        placeholder="VAR/22/2021"/>
+                        placeholder="Budrem Stanislaw Marczak Sp. J."/>
             <form:errors path="details"/><br/>
         </div>
     </div>
@@ -64,7 +64,7 @@
     <div class="form-group">
         <div class="col-sm-6 mb-3 mb-sm-0">
             <button type="submit" class="btn btn-primary btn-success btn-block" value="Save">
-                Save button
+                Save
             </button>
         </div>
     </div>

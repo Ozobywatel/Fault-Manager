@@ -8,7 +8,7 @@
 
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">User ${lastName} details:</h1>
+        <h1 class="h3 mb-0 text-gray-800">User <c:out value="${user.lastName}"/> details:</h1>
         <div class="my-2"></div>
     </div>
 
@@ -45,7 +45,7 @@
                                         </span>
                                 <span class="text">Edit</span>
                             </a>
-                            <a href="<c:url value="/admin/users/${user.id}"/>" class="btn btn-danger btn-icon-split">
+                            <a href="<c:url value="/admin/users/delete/${user.id}"/>" class="btn btn-danger btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-trash"></i>
                                         </span>

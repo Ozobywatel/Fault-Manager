@@ -8,13 +8,13 @@
 
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">All users list</h1>
+        <h1 class="h3 mb-0 text-gray-800">All subcontractors list</h1>
         <div class="my-2"></div>
-        <a href='<c:url value="/admin/users/add"/>' class="btn btn-secondary btn-icon-split">
+        <a href='<c:url value="/admin/subcontractors/add"/>' class="btn btn-secondary btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-arrow-right"></i>
                                         </span>
-            <span class="text"> Add new user </span>
+            <span class="text"> Add new subcontractor </span>
         </a>
 
     </div>
@@ -28,42 +28,42 @@
                 <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Email</th>
-                    <th>First name</th>
-                    <th>Last name</th>
+                    <th>Company name</th>
+                    <th>Company's scope/responsibilities</th>
+                    <th>email</th>
                     <th>Action</th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
                     <th>Id</th>
-                    <th>Email</th>
-                    <th>First name</th>
-                    <th>Last name</th>
+                    <th>Company name</th>
+                    <th>Company's scope/responsibilities</th>
+                    <th>email</th>
                     <th>Action</th>
                 </tr>
                 </tfoot>
                 <tbody>
-                <c:forEach items="${users}" var="user">
+                <c:forEach items="${subcontractors}" var="subcontractor">
                     <tr>
-                        <td>${user.id}</td>
-                        <td>${user.email}</td>
-                        <td>${user.firstName}</td>
-                        <td>${user.lastName}</td>
+                        <td>${subcontractor.id}</td>
+                        <td>${subcontractor.companyName}</td>
+                        <td>${subcontractor.scope}</td>
+                        <td>${subcontractor.email}</td>
                         <td>
-                            <a href="<c:url value="/admin/users/details/${user.id}"/>" class="btn btn-info btn-icon-split">
+                            <a href="<c:url value="/admin/subcontractors/details/${subcontractor.id}"/>" class="btn btn-info btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-info-circle"></i>
                                         </span>
                                 <span class="text">Details</span>
-                            </a>
-                            <a href="<c:url value="/admin/users/edit/${user.id}"/>" class="btn btn-warning btn-icon-split">
+                            </a><br>
+                            <a href="<c:url value="/admin/subcontractors/edit/${subcontractor.id}"/>" class="btn btn-warning btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-arrow-right"></i>
                                         </span>
                                 <span class="text">Edit</span>
-                            </a>
-                            <a href="<c:url value="/admin/users/delete/${user.id}"/>" class="btn btn-danger btn-icon-split">
+                            </a><br>
+                            <a href="<c:url value="/admin/subcontractors/delete/${subcontractor.id}"/>" class="btn btn-danger btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-trash"></i>
                                         </span>

@@ -7,51 +7,64 @@
 
 <div class="form-group">
     <div class="col-sm-6">
-        <h1 class="h4 text-gray-900 mb-4">Edit account form</h1>
+        <h1 class="h4 text-gray-900 mb-4">Edit subcontractor form</h1>
     </div>
 </div>
-<c:url var="edit_url" value="/admin/users/edit"/>
-<form:form method="post" modelAttribute="user" action="${edit_url}">
+<c:url var="edit_url" value="/admin/subcontractors/edit"/>
+<form:form method="post" modelAttribute="subcontractor" action="${edit_url}">
     <form:hidden path="id"/>
-    <form:hidden path="created"/>
     <div class="form-group">
         <div class="col-sm-6">
-            <h5>First name:</h5>
-            <form:input type="text" class="form-control form-control-user" path="firstName"/>
-            <form:errors path="firstName"/><br/>
+            <h5>Company name (short):</h5>
+            <form:input type="text" class="form-control form-control-user" path="companyName"
+                        placeholder="Budrem"/>
+            <form:errors path="companyName"/><br/>
         </div>
     </div>
     <div class="form-group">
         <div class="col-sm-6">
-            <h5>Last name:</h5>
-            <form:input type="text" class="form-control form-control-user" path="lastName"/>
-            <form:errors path="lastName"/><br/>
+            <h5>Company's scope/responsibilities</h5>
+            <form:input type="text" class="form-control form-control-user" path="scope"
+                        placeholder="plaster"/>
+            <form:errors path="scope"/><br/>
         </div>
     </div>
     <div class="form-group">
         <div class="col-sm-6">
             <h5>e-mail address:</h5>
-            <form:input type="email" class="form-control form-control-user" path="email"/>
+            <form:input type="email" class="form-control form-control-user" path="email"
+                        placeholder="budrem2000@gmail.com"/>
             <form:errors path="email"/><br/>
         </div>
     </div>
     <div class="form-group">
         <div class="col-sm-6">
-            <h5>New password (REQUIRED):</h5>
-            <form:input type="password" class="form-control form-control-user" path="password"/>
-            <form:errors path="password"/><br/>
+            <h5>Contract number:</h5>
+            <form:input type="text" class="form-control form-control-user" path="contractNumber"
+                        placeholder="VAR/33/2021"/>
+            <form:errors path="contractNumber"/><br/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-6">
+            <h5>Contract date:</h5>
+            <form:input type="date" class="form-control form-control-user" path="contractDate"/>
+            <form:errors path="contractDate"/><br/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-6">
+            <h5>Subcontractor Details:</h5>
+            <form:input type="text" class="form-control form-control-user" path="details"
+                        placeholder="Budrem Stanislaw Marczak Sp. J."/>
+            <form:errors path="details"/><br/>
         </div>
     </div>
     <br/>
     <div class="form-group">
-        <div class="col-sm-6">
-            <h5><form:checkbox path="adminRole"/>Do you want to new user had access to admin panel?</h5>
-        </div>
-    </div>
-    <div class="form-group">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <button type="submit" class="btn btn-primary btn-user btn-block" value="Save">
-                Update account details and password!
+            <button type="submit" class="btn btn-primary btn-success btn-block" value="Save">
+                Save
             </button>
         </div>
     </div>

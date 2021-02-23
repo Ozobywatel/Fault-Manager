@@ -27,7 +27,7 @@ public class SubcontractorController {
     @GetMapping("/all")
     public String showSubcontractors(Model model) {
         List<Subcontractor> subcontractors = subcontractorService.getSubcontractors();
-       model.addAttribute("subcontractor", subcontractors);
+       model.addAttribute("subcontractors", subcontractors);
         return "subcontractors/all";
     }
 

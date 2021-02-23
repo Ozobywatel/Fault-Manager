@@ -53,8 +53,8 @@
     </div>
     <div class="form-group">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <button type="submit" class="btn btn-primary btn-user btn-block" value="Save">
-                Register Account
+            <button type="submit" class="btn btn-primary btn-success btn-block" value="Save">
+                Save
             </button>
         </div>
     </div>
