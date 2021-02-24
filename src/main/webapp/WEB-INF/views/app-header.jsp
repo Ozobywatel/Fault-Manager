@@ -47,16 +47,16 @@
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
-            <a href='<c:url value="/app/faults/all"/>' class="nav-link" >
-                <i class="fas fa-fw fa-table"></i>
-                <span>Faults</span></a>
         </li>
         <li class="nav-item active">
             <a href='<c:url value="/app/documents/all"/>' class="nav-link" >
                 <i class="fas fa-fw fa-table"></i>
                 <span>Documents</span></a>
         </li>
+        <li class="nav-item active">
+        <a href='<c:url value="/app/faults/all"/>' class="nav-link" >
+        <i class="fas fa-fw fa-table"></i>
+        <span>Faults</span></a>
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
