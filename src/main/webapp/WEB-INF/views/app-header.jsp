@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="newauthor">
 
-    <title>F. Manager - Admin Panel</title>
+    <title>Fault Manager</title>
 
     <!-- Custom fonts for this template-->
     <link href="<c:url value="/theme/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet" type="text/css">
@@ -35,45 +35,38 @@
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
-            <a class="nav-link" href='<c:url value="/app/dash"/>'>
-
-                <span><i class="fas fa-arrow-right"></i>Back to Fault manager</span></a>
-        </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href='<c:url value="/admin/panel"/>'>
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href='<c:url value="/app/dash"/>'>
 
-            <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
-            </div>
-            <div class="sidebar-brand-text mx-3">Admin panel <sup> A.D. 2021</sup></div>
+
+            <div class="sidebar-brand-text mx-3">Fault manager</div>
         </a>
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a href='<c:url value="/admin/users/all"/>' class="nav-link" >
+            <a href='<c:url value="/app/faults/all"/>' class="nav-link" >
                 <i class="fas fa-fw fa-table"></i>
-                <span>Users</span></a>
+                <span>Faults</span></a>
         </li>
         <li class="nav-item active">
-            <a href='<c:url value="/admin/subcontractors/all"/>' class="nav-link" >
+            <a href='<c:url value="/app/documents/all"/>' class="nav-link" >
                 <i class="fas fa-fw fa-table"></i>
-                <span>Subcontractors</span></a>
+                <span>Documents</span></a>
         </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
         <li class="nav-item active">
-            <a href='<c:url value="/admin/projects/all"/>' class="nav-link" >
-                <i class="fas fa-fw fa-table"></i>
-                <span>Projects</span></a>
+            <a href='<c:url value="/admin/panel"/>' class="nav-link" >
+                <i class="fas fa-fw fa-wrench"></i>
+                <span>Admin panel</span></a>
         </li>
-        <li class="nav-item active">
-            <a href='<c:url value="/admin/buildings/all"/>' class="nav-link" >
-                <i class="fas fa-fw fa-table"></i>
-                <span>Buildings</span></a>
-        </li>
+
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 

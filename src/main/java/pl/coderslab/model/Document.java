@@ -5,8 +5,6 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.text.DateFormat;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -29,5 +27,12 @@ public class Document {
     @ManyToOne
     @NotNull
     private Building building;
+
     private int unitNumber;
+
+    @ManyToOne
+    @NotNull
+    private User user;
+
+
 }

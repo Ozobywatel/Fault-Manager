@@ -31,14 +31,6 @@
     </div>
     <div class="form-group">
         <div class="col-sm-6">
-            <h5>Building number:</h5>
-            <form:input type="text" class="form-control form-control-user" path="buildingNumber"
-                        placeholder="klatka 1"/>
-            <form:errors path="buildingNumber"/><br/>
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-6">
             <h5>Street:</h5>
             <form:input type="text" class="form-control form-control-user" path="addressStreet"
                         placeholder="Marszałkowska"/>

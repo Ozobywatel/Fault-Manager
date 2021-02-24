@@ -16,8 +16,6 @@ public class Fault {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
-
     @ManyToOne
     @NotNull
     private Document document;
@@ -29,10 +27,6 @@ public class Fault {
     @NotBlank
     @Size(max = 600)
     private String description;
-
-    @ManyToOne
-    @NotNull
-    private User user;
 
 
 

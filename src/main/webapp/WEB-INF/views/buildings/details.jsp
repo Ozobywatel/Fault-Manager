@@ -23,7 +23,6 @@
                     <th>Id</th>
                     <th>Project</th>
                     <th>Building name</th>
-                    <th>Building number</th>
                     <th>Street</th>
                     <th>Number</th>
                     <th>Postal code</th>
@@ -40,7 +39,6 @@
                         <td><c:out value="${building.id}"/></td>
                         <td><c:out value="${building.project.projectName}"/></td>
                         <td><c:out value="${building.buildingName}"/></td>
-                        <td><c:out value="${building.buildingNumber}"/></td>
                         <td><c:out value="${building.addressStreet}"/></td>
                         <td><c:out value="${building.addressNumber}"/></td>
                         <td><c:out value="${building.addressZipCode}"/></td>

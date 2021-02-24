@@ -30,7 +30,6 @@
                     <th>Id</th>
                     <th>Project</th>
                     <th>Building name</th>
-                    <th>Nr</th>
                     <th>City</th>
                     <th>Country</th>
                     <th>Action</th>
@@ -42,7 +41,6 @@
                         <td>${building.id}</td>
                         <td>${building.project.projectName}</td>
                         <td>${building.buildingName}</td>
-                        <td>${building.buildingNumber}</td>
                         <td>${building.addressCity}</td>
                         <td>${building.addressCountry}</td>
                         <td>

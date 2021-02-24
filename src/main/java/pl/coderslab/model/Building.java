@@ -18,8 +18,6 @@ public class Building {
     private Project project;
     @NotBlank
     private String buildingName;
-    @NotBlank
-    private String buildingNumber;
     @NotNull
     @Min(1)
     @Max(2000)
