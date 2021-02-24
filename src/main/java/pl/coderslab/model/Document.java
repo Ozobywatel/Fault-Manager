@@ -15,14 +15,11 @@ public class Document {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
+
     @Enumerated(EnumType.STRING)
     private DocumentType documentType;
-    @NotBlank
     private LocalDateTime created;
-    @NotBlank
     private LocalDateTime updated;
-    @NotBlank
     private LocalDateTime expirationDate;
     @ManyToOne
     @NotNull

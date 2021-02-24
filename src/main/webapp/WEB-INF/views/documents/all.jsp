@@ -1,4 +1,4 @@
-<%@ include file="/WEB-INF/views/admin-header.jsp" %>
+<%@ include file="/WEB-INF/views/app-header.jsp" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -28,39 +28,48 @@
                 <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Project</th>
+                    <th>Document Type</th>
                     <th>Building name</th>
-                    <th>City</th>
-                    <th>Country</th>
-                    <th>Action</th>
+                    <th>Unit number</th>
+                    <th>Creation date</th>
+                    <th>Document Action</th>
+                    <th>Fault Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${buildings}" var="building">
+                <c:forEach items="${documents}" var="document">
                     <tr>
-                        <td>${building.id}</td>
-                        <td>${building.project.projectName}</td>
-                        <td>${building.buildingName}</td>
-                        <td>${building.addressCity}</td>
-                        <td>${building.addressCountry}</td>
+                        <td>${document.id}</td>
+                        <td>${document.documentType}</td>
+                        <td>${document.building.buildingName}</td>
+                        <td>${document.unitNumber}</td>
+                        <td>${document.created}</td>
                         <td>
-                            <a href="<c:url value="/admin/buildings/details/${building.id}"/>" class="btn btn-info btn-icon-split">
+                            <a href="<c:url value="/app/documents/details/${document.id}"/>" class="btn btn-info btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-info-circle"></i>
                                         </span>
-                                <span class="text">Details</span>
+                                <span class="text"> Document details</span>
                             </a>
-                            <a href="<c:url value="/admin/buildings/edit/${building.id}"/>" class="btn btn-warning btn-icon-split">
+                            <a href="<c:url value="/app/documents/edit/${document.id}"/>" class="btn btn-warning btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-arrow-right"></i>
                                         </span>
-                                <span class="text">Edit</span>
+                                <span class="text">Edit document</span>
                             </a>
-                            <a href="<c:url value="/admin/buildings/delete/${project.id}"/>" class="btn btn-danger btn-icon-split">
+                            <a href="<c:url value="/app/documents/delete/${document.id}"/>" class="btn btn-danger btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-trash"></i>
                                         </span>
-                                <span class="text">Delete</span>
+                                <span class="text">Delete document</span>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="<c:url value="/app/documents/faults/${document.id}"/>" class="btn btn-success btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-fw fa-table"></i>
+                                        </span>
+                                <span class="text">FAULT LIST</span>
                             </a>
                         </td>
                     </tr>
