@@ -20,13 +20,13 @@ public class Building {
     private String buildingName;
     @NotBlank
     private String buildingNumber;
-    @NotEmpty
-    @Size(max = 2000)
-    @Size(min = 1)
+    @NotNull
+    @Min(1)
+    @Max(2000)
     private int maxUnitNumber;
     @NotNull
-    @Size(max = 2000)
-    @Size(min = 1)
+    @Min(1)
+    @Max(2000)
     private int minUnitNumber;
     private String addressStreet;
     private String addressNumber;

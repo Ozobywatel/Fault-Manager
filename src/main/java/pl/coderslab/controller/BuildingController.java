@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.coderslab.model.Building;
 import pl.coderslab.service.BuildingService;
+import pl.coderslab.service.ProjectService;
 
 import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
@@ -19,9 +20,11 @@ import java.util.List;
 public class BuildingController {
 
     private final BuildingService buildingService;
+    private final ProjectService projectService;
 
-    public BuildingController(BuildingService buildingService) {
+    public BuildingController(BuildingService buildingService, ProjectService projectService) {
         this.buildingService = buildingService;
+        this.projectService = projectService;
     }
 
     @GetMapping("/all")
@@ -32,24 +35,26 @@ public class BuildingController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public String showAddUserForm(Model model) {
+    public String showAddBuildingForm(Model model) {
         model.addAttribute("building", new Building());
+        model.addAttribute("projects", projectService.getProjects());
         return "buildings/add";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String saveUser(@Valid Building user, BindingResult result) {
+    public String saveBuilding(@Valid Building building, BindingResult result) {
 
         if (result.hasErrors()) {
             return "buildings/add";
         }
-        buildingService.add(user);
+        buildingService.add(building);
         return "redirect:/admin/buildings/all";
     }
 
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
     public String showEditForm(@PathVariable long id, Model model) {
         model.addAttribute("building", buildingService.get(id));
+        model.addAttribute("projects", projectService.getProjects());
         return "buildings/edit";
     }
 
@@ -64,13 +69,13 @@ public class BuildingController {
 
 
     @GetMapping("/delete/{id}")
-    public String deleteUser(Model model, @PathVariable long id) {
+    public String deleteBuilding(Model model, @PathVariable long id) {
         buildingService.delete(id);
         return "redirect:/admin/buildings/all";
     }
 
     @GetMapping("/details/{id}")
-    public String showUser(Model model, @PathVariable long id) {
+    public String showBuilding(Model model, @PathVariable long id) {
         model.addAttribute("building", buildingService.get(id).orElseThrow(EntityNotFoundException::new));
         return "buildings/details";
     }

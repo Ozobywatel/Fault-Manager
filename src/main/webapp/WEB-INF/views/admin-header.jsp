@@ -69,6 +69,11 @@
                 <i class="fas fa-fw fa-table"></i>
                 <span>Projects</span></a>
         </li>
+        <li class="nav-item active">
+            <a href='<c:url value="/admin/buildings/all"/>' class="nav-link" >
+                <i class="fas fa-fw fa-table"></i>
+                <span>Buildings</span></a>
+        </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 
