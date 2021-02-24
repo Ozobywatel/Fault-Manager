@@ -8,13 +8,13 @@
 
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">All documents list</h1>
+        <h1 class="h3 mb-0 text-gray-800">All faults list</h1>
         <div class="my-2"></div>
-        <a href='<c:url value="/app/documents/add"/>' class="btn btn-secondary btn-icon-split">
+        <a href='<c:url value="/app/documents/all"/>' class="btn btn-secondary btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-arrow-right"></i>
                                         </span>
-            <span class="text"> Add new document </span>
+            <span class="text"> Go to documents list </span>
         </a>
 
     </div>
