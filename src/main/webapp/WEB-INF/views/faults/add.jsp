@@ -8,10 +8,10 @@
 <div class="form-group">
     <div class="col-sm-6">
         <h1 class="h4 text-gray-900 mb-4">Inspection document edit form</h1>
-<%--            <br/> Document id: <c:out value="${document.id}"/>--%>
-<%--            <br/> Building name: <c:out value="${fault.document.building.buildingName}"/>--%>
-<%--            <br/> Unit number: <c:out value="${fault.document.unitNumber}"/>--%>
-<%--            <br/> Expiration date: <c:out value="${fault.document.expirationDate}"/>--%>
+        <%--            <br/> Document id: <c:out value="${document.id}"/>--%>
+        <%--            <br/> Building name: <c:out value="${document.building.buildingName}"/>--%>
+        <%--            <br/> Unit number: <c:out value="${document.unitNumber}"/>--%>
+        <%--            <br/> Expiration date: <c:out value="${document.expirationDate}"/>--%>
     </div>
 </div>
 
@@ -47,7 +47,7 @@
                                             <i class="fas fa-arrow-right"></i>
                                         </span>
                                 <span class="text">Edit</span>
-                            </a><br/>
+                            </a>
                             <a href="<c:url value="/app/faults/delete/${fault.id}"/>"
                                class="btn btn-danger btn-icon-split">
                                         <span class="icon text-white-50">
