@@ -24,6 +24,15 @@ public class JpaFaultService implements FaultService {
     }
 
     @Override
+    public List<Fault> getAllByDocumentId(Long documentId) {
+        return faultRepository.getAllByDocumentId(documentId);
+    }
+    @Override
+    public List<Fault> getAllBySubcontractorId(Long documentId) {
+        return faultRepository.getAllBySubcontractorId(documentId);
+    }
+
+    @Override
     public void add(Fault fault) {
         faultRepository.save(fault);
     }

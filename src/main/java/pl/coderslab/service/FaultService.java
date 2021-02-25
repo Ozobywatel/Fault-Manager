@@ -9,6 +9,10 @@ public interface FaultService {
 
     List<Fault> getFaults();
 
+    List<Fault> getAllByDocumentId(Long documentId);
+
+    List<Fault> getAllBySubcontractorId(Long subcontractorId);
+
     void add(Fault fault);
 
     Optional<Fault> get(Long id);

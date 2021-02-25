@@ -28,48 +28,43 @@
                 <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Document Type</th>
-                    <th>Building name</th>
-                    <th>Unit number</th>
-                    <th>Creation date</th>
-                    <th>Document Action</th>
-                    <th>Fault Action</th>
+                    <th>Document id</th>
+                    <th>Description</th>
+                    <th>Subcontractor</th>
+                    <th>Expiration date</th>
+                    <th>Building</th>
+                    <th>Number</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${documents}" var="document">
+                <c:forEach items="${faults}" var="fault">
                     <tr>
-                        <td>${document.id}</td>
-                        <td>${document.documentType}</td>
-                        <td>${document.building.buildingName}</td>
-                        <td>${document.unitNumber}</td>
-                        <td>${document.created}</td>
+                        <td>${fault.id}</td>
+                        <td>${fault.document.id}</td>
+                        <td>${fault.description}</td>
+                        <td>${fault.subcontractor.companyName}</td>
+                        <td>${fault.document.expirationDate}</td>
+                        <td>${fault.document.building.buildingName}</td>
+                        <td>${fault.document.unitNumber}</td>
                         <td>
-                            <a href="<c:url value="/app/documents/details/${document.id}"/>" class="btn btn-info btn-icon-split">
+                            <a href="<c:url value="/app/faults/details/${fault.id}"/>" class="btn btn-info btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-info-circle"></i>
                                         </span>
-                                <span class="text"> Document details</span>
-                            </a>
-                            <a href="<c:url value="/app/documents/edit/${document.id}"/>" class="btn btn-warning btn-icon-split">
+                                <span class="text"> Fault details</span>
+                            </a><br/>
+                            <a href="<c:url value="/app/faults/edit/${fault.id}"/>" class="btn btn-warning btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-arrow-right"></i>
                                         </span>
-                                <span class="text">Edit document</span>
-                            </a>
-                            <a href="<c:url value="/app/documents/delete/${document.id}"/>" class="btn btn-danger btn-icon-split">
+                                <span class="text">Edit</span>
+                            </a><br/>
+                            <a href="<c:url value="/app/faults/delete/${fault.id}"/>" class="btn btn-danger btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-trash"></i>
                                         </span>
-                                <span class="text">Delete document</span>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="<c:url value="/app/documents/faults/${document.id}"/>" class="btn btn-success btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-fw fa-table"></i>
-                                        </span>
-                                <span class="text">FAULT LIST</span>
+                                <span class="text">Delete</span>
                             </a>
                         </td>
                     </tr>

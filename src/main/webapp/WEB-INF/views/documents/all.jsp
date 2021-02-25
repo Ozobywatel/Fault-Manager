@@ -31,9 +31,9 @@
                     <th>Document Type</th>
                     <th>Building name</th>
                     <th>Unit number</th>
+                    <th>Fault Action</th>
                     <th>Creation date</th>
                     <th>Document Action</th>
-                    <th>Fault Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -43,33 +43,33 @@
                         <td>${document.documentType}</td>
                         <td>${document.building.buildingName}</td>
                         <td>${document.unitNumber}</td>
+                        <td>
+                            <a href="<c:url value="/app/faults/documents/${document.id}/add"/>" class="btn btn-success btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-fw fa-table"></i>
+                                        </span>
+                                <span class="text">GO TO FAULT LIST</span>
+                            </a>
+                        </td>
                         <td>${document.created}</td>
                         <td>
                             <a href="<c:url value="/app/documents/details/${document.id}"/>" class="btn btn-info btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-info-circle"></i>
                                         </span>
-                                <span class="text"> Document details</span>
-                            </a>
+                                <span class="text"> Details</span>
+                            </a><br/>
                             <a href="<c:url value="/app/documents/edit/${document.id}"/>" class="btn btn-warning btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-arrow-right"></i>
                                         </span>
-                                <span class="text">Edit document</span>
-                            </a>
+                                <span class="text">Edit</span>
+                            </a><br/>
                             <a href="<c:url value="/app/documents/delete/${document.id}"/>" class="btn btn-danger btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-trash"></i>
                                         </span>
-                                <span class="text">Delete document</span>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="<c:url value="/app/documents/faults/${document.id}"/>" class="btn btn-success btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-fw fa-table"></i>
-                                        </span>
-                                <span class="text">FAULT LIST</span>
+                                <span class="text">Delete</span>
                             </a>
                         </td>
                     </tr>
