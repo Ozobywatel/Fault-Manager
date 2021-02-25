@@ -39,52 +39,22 @@ public class FaultController {
     }
 
     @RequestMapping(value = "/documents/{id}/add", method = RequestMethod.GET)
-    public String showAddFaultForm(@PathVariable long id,Model model) {
-        List<Fault> faults = faultService.getAllByDocumentId(id);
-        model.addAttribute("document", documentService.get(id));
-        model.addAttribute("faults", faults);
-        model.addAttribute("fault", new Fault());
+    public String showAddFaultForm(Model model, @PathVariable long id) {
+        model.addAttribute("faults", faultService.getAllByDocumentId(id));
+        model.addAttribute("newFault", new Fault());
         model.addAttribute("subcontractors", subcontractorService.getSubcontractors());
+        model.addAttribute("document", documentService.get(id));
         return "faults/add";
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String saveFault(@Valid Fault fault, BindingResult result) {
+    @RequestMapping(value = "/documents/{id}/add", method = RequestMethod.POST)
+    public String saveFault(@Valid Fault newFault, BindingResult result) {
 
         if (result.hasErrors()) {
             return "faults/add";
         }
-        faultService.add(fault);
+        newFault.setDeleted(false);
+        faultService.add(newFault);
         return "redirect:/app/documents/all";
     }
-//
-//    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
-//    public String showEditForm(@PathVariable long id, Model model) {
-//        model.addAttribute("document", documentService.get(id));
-//        model.addAttribute("buildings", buildingService.getBuildings());
-//        model.addAttribute("users", userService.getUsers());
-//        return "documents/edit";
-//    }
-//
-//    @RequestMapping(value = "/edit", method = RequestMethod.POST)
-//    public String editDocument(@Valid Document document, BindingResult result) {
-//        if (result.hasErrors()) {
-//            return "documents/edit";
-//        }
-//        documentService.add(document);
-//        return "redirect:/app/documents/all";
-//    }
-//
-//
-//    @GetMapping("/delete/{id}")
-//    public String deleteDocument(Model model, @PathVariable long id) {
-//        documentService.delete(id);
-//        return "redirect:/app/documents/all";
-//    }
-//
-//    @GetMapping("/details/{id}")
-//    public String showDocument(Model model, @PathVariable long id) {
-//        model.addAttribute("document", documentService.get(id).orElseThrow(EntityNotFoundException::new));
-//        return "documents/details";
-//    }
 }

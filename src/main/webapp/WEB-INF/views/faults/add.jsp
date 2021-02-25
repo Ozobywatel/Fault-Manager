@@ -8,11 +8,10 @@
 <div class="form-group">
     <div class="col-sm-6">
         <h1 class="h4 text-gray-900 mb-4">Inspection document edit form</h1>
-            <br/> Document id: <c:out value="${document.id}"/>
-            <br/> Building name: <c:out value="${document.building.buildingName}"/>
-            <br/> Unit number: <c:out value="${document.unitNumber}"/>
-            <br/> Expiration date: <c:out value="${fault.document.expirationDate}"/>
-
+<%--            <br/> Document id: <c:out value="${document.id}"/>--%>
+<%--            <br/> Building name: <c:out value="${fault.document.building.buildingName}"/>--%>
+<%--            <br/> Unit number: <c:out value="${fault.document.unitNumber}"/>--%>
+<%--            <br/> Expiration date: <c:out value="${fault.document.expirationDate}"/>--%>
     </div>
 </div>
 
@@ -23,8 +22,8 @@
                 <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Description</th>
                     <th>Subcontractor</th>
+                    <th>Description</th>
                     <th>Action</th>
                 </tr>
                 </thead>
@@ -32,8 +31,8 @@
                 <c:forEach items="${faults}" var="fault">
                     <tr>
                         <td>${fault.id}</td>
-                        <td>${fault.description}</td>
                         <td>${fault.subcontractor.companyName}</td>
+                        <td>${fault.description}</td>
                         <td>
                             <a href="<c:url value="/app/faults/details/${fault.id}"/>"
                                class="btn btn-info btn-icon-split">
@@ -60,7 +59,7 @@
                     </tr>
                 </c:forEach>
                 <form:form method="post"
-                           modelAttribute="fault">
+                           modelAttribute="newFault">
                     <form:hidden path="document.id"/>
                     <tr>
                         <td>add new -></td>

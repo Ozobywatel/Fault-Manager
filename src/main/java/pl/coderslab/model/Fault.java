@@ -28,8 +28,6 @@ public class Fault {
     @Size(max = 600)
     private String description;
 
-
-
     @NotNull
     private boolean deleted;
 
