@@ -45,7 +45,6 @@ public class BuildingController {
     public String saveBuilding(@Valid Building building, BindingResult result) {
 
         if (result.hasErrors()) {
-
             return "buildings/add";
         }
         buildingService.add(building);

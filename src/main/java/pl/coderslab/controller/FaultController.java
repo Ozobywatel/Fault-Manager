@@ -57,4 +57,10 @@ public class FaultController {
         faultService.add(newFault);
         return "redirect:/app/documents/all";
     }
+
+    @GetMapping("/delete/{id}")
+    public String deleteFault(Model model, @PathVariable long id) {
+        faultService.delete(id);
+        return "redirect:/app/faults/all";
+    }
 }
