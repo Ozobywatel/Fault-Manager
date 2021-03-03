@@ -42,11 +42,11 @@ public class BuildingController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String saveBuilding(@Valid Building building, BindingResult result) {
+    public String saveBuilding(Building building, BindingResult result) {
 
-        if (result.hasErrors()) {
-            return "buildings/add";
-        }
+//        if (result.hasErrors()) {
+//            return "buildings/add";
+//        }
         buildingService.add(building);
         return "redirect:/admin/buildings/all";
     }

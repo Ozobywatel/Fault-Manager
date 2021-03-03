@@ -44,6 +44,7 @@ public class DocumentController {
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String showAddDocumentForm(Model model) {
+        model.addAttribute("docTypes", buildingService.getDocTypes());
         model.addAttribute("document", new Document());
         model.addAttribute("buildings", buildingService.getBuildings());
         model.addAttribute("users", userService.getUsers());

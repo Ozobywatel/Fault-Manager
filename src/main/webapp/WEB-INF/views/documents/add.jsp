@@ -29,22 +29,22 @@
             <form:errors path="building"/><br/>
         </div>
     </div>
-<%--    <div class="form-group">--%>
-<%--        <div class="col-sm-6">--%>
-<%--            <h5>Select Inspection type:</h5>--%>
-<%--            <form:select class="form-control form-control-user" path="documentType"--%>
-<%--                        items="${document.documentType}"/>--%>
-<%--            <form:errors path="documentType"/><br/>--%>
-<%--        </div>--%>
-<%--    </div>--%>
     <div class="form-group">
         <div class="col-sm-6">
-            <h5>Inspection type:</h5>
-            <form:input type="text" class="form-control form-control-user" path="documentType"
-                        placeholder="INTERNAL"/>
+            <h5>Select Inspection type:</h5>
+            <form:select class="form-control form-control-user" path="documentType"
+                        items="${docTypes}"/>
             <form:errors path="documentType"/><br/>
         </div>
     </div>
+<%--    <div class="form-group">--%>
+<%--        <div class="col-sm-6">--%>
+<%--            <h5>Inspection type:</h5>--%>
+<%--            <form:input type="text" class="form-control form-control-user" path="documentType"--%>
+<%--                        placeholder="INTERNAL"/>--%>
+<%--            <form:errors path="documentType"/><br/>--%>
+<%--        </div>--%>
+<%--    </div>--%>
     <div class="form-group">
         <div class="col-sm-6">
             <h5>Unit number:</h5>

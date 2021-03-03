@@ -16,4 +16,6 @@ public interface BuildingService {
     void delete(Long id);
 
     void update(Building building);
+
+    List<String> getDocTypes();
 }

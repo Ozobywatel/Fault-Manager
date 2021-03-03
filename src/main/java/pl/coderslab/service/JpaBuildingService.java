@@ -6,6 +6,7 @@ import pl.coderslab.model.Building;
 import pl.coderslab.repository.BuildingRepository;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,6 +43,15 @@ public class JpaBuildingService implements BuildingService {
     @Override
     public void update(Building building) {
         buildingRepository.save(building);
+    }
+    
+    @Override
+    public ArrayList<String> getDocTypes() {
+        ArrayList<String> strings = new ArrayList<>();
+        strings.add("INTERNAL");
+        strings.add("INSPECTORIAL");
+        strings.add("TENANTS");
+        return strings;
     }
 
 }
