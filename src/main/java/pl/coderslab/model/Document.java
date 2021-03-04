@@ -24,7 +24,7 @@ public class Document {
     @ManyToOne
     @NotNull
     private Building building;
-
+    @NotNull
     private int unitNumber;
 
     @ManyToOne
