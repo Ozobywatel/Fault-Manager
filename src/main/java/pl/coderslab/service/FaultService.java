@@ -15,6 +15,9 @@ public interface FaultService {
 
     List<Fault> findAllByDeletedFalse();
 
+    List<Fault> findAllByDocumentIdAndDeleted(Long id, boolean b);
+
+
     void add(Fault fault);
 
     Optional<Fault> get(Long id);

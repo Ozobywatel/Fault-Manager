@@ -40,7 +40,7 @@ public class FaultController {
 
     @RequestMapping(value = "/documents/{id}/add", method = RequestMethod.GET)
     public String showAddFaultForm(Model model, @PathVariable long id) {
-        model.addAttribute("faults", faultService.getAllByDocumentId(id));
+        model.addAttribute("faults", faultService.findAllByDocumentIdAndDeleted(id, false));
         model.addAttribute("newFault", new Fault());
         model.addAttribute("subcontractors", subcontractorService.getSubcontractors());
         return "faults/add";

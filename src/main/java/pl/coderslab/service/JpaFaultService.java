@@ -37,6 +37,11 @@ public class JpaFaultService implements FaultService {
         return faultRepository.findAllByDeletedFalse();
     }
 
+    @Override
+    public List<Fault> findAllByDocumentIdAndDeleted(Long id, boolean b) {
+        return faultRepository.findAllByDocumentIdAndDeleted(id, b);
+    }
+
 
     @Override
     public void add(Fault fault) {
