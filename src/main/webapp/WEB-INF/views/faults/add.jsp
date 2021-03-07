@@ -29,7 +29,6 @@
                 </thead>
                 <tbody>
                 <c:forEach items="${faults}" var="fault">
-                    <form:hidden path="fault.document.id"/>
                     <tr>
                         <td>${fault.id}</td>
                         <td>${fault.subcontractor.companyName}</td>

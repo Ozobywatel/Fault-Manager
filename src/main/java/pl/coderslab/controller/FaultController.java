@@ -43,7 +43,6 @@ public class FaultController {
         model.addAttribute("faults", faultService.getAllByDocumentId(id));
         model.addAttribute("newFault", new Fault());
         model.addAttribute("subcontractors", subcontractorService.getSubcontractors());
-        model.addAttribute("document", documentService.get(id));
         return "faults/add";
     }
 
