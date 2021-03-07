@@ -13,6 +13,8 @@ public interface FaultService {
 
     List<Fault> getAllBySubcontractorId(Long subcontractorId);
 
+    List<Fault> findAllByDeletedFalse();
+
     void add(Fault fault);
 
     Optional<Fault> get(Long id);

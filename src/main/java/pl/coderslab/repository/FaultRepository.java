@@ -11,4 +11,5 @@ public interface FaultRepository extends JpaRepository<Fault, Long> {
 
     List<Fault> getAllByDocumentId(Long id);
     List<Fault> getAllBySubcontractorId(Long id);
+    List<Fault> findAllByDeletedFalse();
 }

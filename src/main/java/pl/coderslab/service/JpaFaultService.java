@@ -33,6 +33,12 @@ public class JpaFaultService implements FaultService {
     }
 
     @Override
+    public List<Fault> findAllByDeletedFalse() {
+        return faultRepository.findAllByDeletedFalse();
+    }
+
+
+    @Override
     public void add(Fault fault) {
         faultRepository.save(fault);
     }

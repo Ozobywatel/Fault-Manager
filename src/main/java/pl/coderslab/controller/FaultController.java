@@ -33,7 +33,7 @@ public class FaultController {
 
     @GetMapping("/all")
     public String showFaults(Model model) {
-        List<Fault> faults = faultService.getFaults();
+        List<Fault> faults = faultService.findAllByDeletedFalse();
        model.addAttribute("faults", faults);
         return "faults/all-all";
     }
