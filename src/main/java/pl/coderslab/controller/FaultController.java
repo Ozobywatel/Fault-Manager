@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.coderslab.model.Document;
 import pl.coderslab.model.Fault;
+import pl.coderslab.model.Subcontractor;
 import pl.coderslab.service.*;
 
 import javax.persistence.EntityNotFoundException;
@@ -34,7 +35,7 @@ public class FaultController {
     @GetMapping("/all")
     public String showFaults(Model model) {
         List<Fault> faults = faultService.findAllByDeletedFalse();
-       model.addAttribute("faults", faults);
+        model.addAttribute("faults", faults);
         return "faults/all-all";
     }
 
@@ -57,9 +58,18 @@ public class FaultController {
         return "redirect:/app/documents/all";
     }
 
-    @GetMapping("/delete/{id}")
-    public String deleteFault(Model model, @PathVariable long id) {
-        faultService.delete(id);
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public String deleteFaultGet(Model model, @PathVariable long id) {
+
+        model.addAttribute("fault", faultService.get(id));
+
+        return "faults/delete";
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String deletedFaultSetTrue(Fault fault, BindingResult result) {
+        fault.setDeleted(true);
+        faultService.add(fault);
         return "redirect:/app/faults/all";
     }
 }
