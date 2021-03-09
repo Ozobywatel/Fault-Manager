@@ -17,6 +17,7 @@ import javax.validation.Valid;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/app/faults")
@@ -58,18 +59,28 @@ public class FaultController {
         return "redirect:/app/documents/all";
     }
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    public String deleteFaultGet(Model model, @PathVariable long id) {
+    //DELETING FAULT FROM FAULT LIST
+    @RequestMapping(value = "/deleteFromList/{id}", method = RequestMethod.GET)
+    public String deleteFaultFromList(@PathVariable long id) {
 
-        model.addAttribute("fault", faultService.get(id));
-
-        return "faults/delete";
-    }
-
-    @RequestMapping(value = "/delete", method = RequestMethod.POST)
-    public String deletedFaultSetTrue(Fault fault, BindingResult result) {
+        Fault fault = faultService.getById(id);
         fault.setDeleted(true);
         faultService.add(fault);
+
         return "redirect:/app/faults/all";
     }
+
+    //DELETING FAULT FROM DOCUMENT LIST
+    @RequestMapping(value = "/deleteFromDocument/{id}", method = RequestMethod.GET)
+    public String deleteFaultFromDocumentForm(@PathVariable long id) {
+
+        Fault fault = faultService.getById(id);
+        fault.setDeleted(true);
+        Long idDoc = fault.getDocument().getId();
+        faultService.add(fault);
+
+        return "redirect:/app/faults/documents/" + idDoc + "/add";
+    }
+
+
 }

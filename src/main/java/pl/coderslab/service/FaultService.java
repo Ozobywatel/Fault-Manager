@@ -25,4 +25,5 @@ public interface FaultService {
     void delete(Long id);
 
     void update(Fault fault);
+    Fault getById(Long id);
 }

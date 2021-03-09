@@ -63,4 +63,7 @@ public class JpaFaultService implements FaultService {
         faultRepository.save(fault);
     }
 
+    @Override
+    public Fault getById(Long id) {return  faultRepository.getById(id);}
+
 }

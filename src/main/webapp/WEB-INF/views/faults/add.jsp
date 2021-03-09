@@ -48,7 +48,7 @@
                                         </span>
                                 <span class="text">Edit</span>
                             </a>
-                            <a href="<c:url value="/app/faults/delete/${fault.id}"/>"
+                            <a href="<c:url value="/app/faults/deleteFromDocument/${fault.id}"/>"
                                class="btn btn-danger btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-trash"></i>

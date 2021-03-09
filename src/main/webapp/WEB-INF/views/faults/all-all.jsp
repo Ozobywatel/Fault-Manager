@@ -60,7 +60,7 @@
                                         </span>
                                 <span class="text">Edit</span>
                             </a><br/>
-                            <a href="<c:url value="/app/faults/delete/${fault.id}"/>" class="btn btn-danger btn-icon-split">
+                            <a href="<c:url value="/app/faults/deleteFromList/${fault.id}"/>" class="btn btn-danger btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-trash"></i>
                                         </span>
