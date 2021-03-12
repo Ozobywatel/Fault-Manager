@@ -45,6 +45,7 @@ public class JpaFaultService implements FaultService {
 
     @Override
     public void add(Fault fault) {
+
         faultRepository.save(fault);
     }
 
