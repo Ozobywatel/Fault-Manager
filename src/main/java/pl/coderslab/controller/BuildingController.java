@@ -3,11 +3,9 @@ package pl.coderslab.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import pl.coderslab.model.Building;
+import pl.coderslab.model.Project;
 import pl.coderslab.service.BuildingService;
 import pl.coderslab.service.ProjectService;
 
@@ -41,12 +39,17 @@ public class BuildingController {
         return "buildings/add";
     }
 
+    @ModelAttribute("projects")
+    public List<Project> getProj(){
+        return projectService.getProjects();
+    }
+
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String saveBuilding(Building building, BindingResult result) {
 
-//        if (result.hasErrors()) {
-//            return "buildings/add";
-//        }
+        if (result.hasErrors()) {
+            return "buildings/add";
+        }
         buildingService.add(building);
         return "redirect:/admin/buildings/all";
     }
