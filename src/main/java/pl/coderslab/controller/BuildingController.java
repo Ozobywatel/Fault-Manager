@@ -35,7 +35,6 @@ public class BuildingController {
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String showAddBuildingForm(Model model) {
         model.addAttribute("building", new Building());
-        model.addAttribute("projects", projectService.getProjects());
         return "buildings/add";
     }
 
@@ -45,7 +44,7 @@ public class BuildingController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String saveBuilding(Building building, BindingResult result) {
+    public String saveBuilding(@Valid Building building, BindingResult result) {
 
         if (result.hasErrors()) {
             return "buildings/add";

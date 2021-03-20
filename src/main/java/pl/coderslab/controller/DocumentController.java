@@ -3,12 +3,11 @@ package pl.coderslab.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import pl.coderslab.model.Building;
 import pl.coderslab.model.Document;
+import pl.coderslab.model.Project;
+import pl.coderslab.model.User;
 import pl.coderslab.service.BuildingService;
 import pl.coderslab.service.DocumentService;
 import pl.coderslab.service.ProjectService;
@@ -42,12 +41,20 @@ public class DocumentController {
         return "documents/all";
     }
 
+    @ModelAttribute("docTypes")
+    public List<String> getDocTypes(){
+        return buildingService.getDocTypes();
+    }
+
+    @ModelAttribute("buildings")
+    public List<Building> getBuildings(){return buildingService.getBuildings(); }
+
+    @ModelAttribute("users")
+    public List<User> getUsers(){return  userService.getUsers(); }
+
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String showAddDocumentForm(Model model) {
-        model.addAttribute("docTypes", buildingService.getDocTypes());
         model.addAttribute("document", new Document());
-        model.addAttribute("buildings", buildingService.getBuildings());
-        model.addAttribute("users", userService.getUsers());
         return "documents/add";
     }
 
