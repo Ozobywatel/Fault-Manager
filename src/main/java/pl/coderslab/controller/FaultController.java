@@ -43,20 +43,25 @@ public class FaultController {
     @RequestMapping(value = "/documents/{id}/add", method = RequestMethod.GET)
     public String showAddFaultForm(Model model, @PathVariable long id) {
         model.addAttribute("faults", faultService.findAllByDocumentIdAndDeleted(id, false));
-        model.addAttribute("newFault", new Fault());
+
+        Fault fault = new Fault();
+        model.addAttribute("newFault", fault);
+        fault.setDeleted(false);
+        fault.setDocument(documentService.get(id).orElseThrow(EntityNotFoundException::new));
+
         model.addAttribute("subcontractors", subcontractorService.getSubcontractors());
         return "faults/add";
     }
 
-    @RequestMapping(value = "/documents/{newFault.document.id}/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/documents/{id}/add", method = RequestMethod.POST)
     public String saveFault(@Valid Fault newFault, BindingResult result) {
 
         if (result.hasErrors()) {
             return "faults/add";
         }
-        newFault.setDeleted(false);
-        faultService.add(newFault);
-        return "redirect:/app/documents/all";
+
+      faultService.add(newFault);
+        return "redirect:/app/faults/documents/"+ newFault.getDocument().getId() +"/add";
     }
 
     //DELETING FAULT FROM FAULT LIST
