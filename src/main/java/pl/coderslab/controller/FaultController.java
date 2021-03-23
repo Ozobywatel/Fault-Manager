@@ -56,12 +56,13 @@ public class FaultController {
     @RequestMapping(value = "/documents/{id}/add", method = RequestMethod.POST)
     public String saveFault(@Valid Fault newFault, BindingResult result) {
 
+        newFault.setId(null);
         if (result.hasErrors()) {
             return "faults/add";
         }
 
-      faultService.add(newFault);
-        return "redirect:/app/faults/documents/"+ newFault.getDocument().getId() +"/add";
+        faultService.add(newFault);
+        return "redirect:/app/faults/documents/" + newFault.getDocument().getId() + "/add";
     }
 
     //DELETING FAULT FROM FAULT LIST
