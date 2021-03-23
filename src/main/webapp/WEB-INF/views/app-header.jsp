@@ -68,15 +68,7 @@
                 <span>Admin panel</span></a>
         </li>
         </sec:authorize>
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
 
-        <li class="nav-item active">
-            <form action="<c:url value="/logout"/>" method="post">
-                <input class="fa fa-id-badge" type="submit" value="Wyloguj">
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-            </form>
-        </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 
@@ -102,6 +94,7 @@
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
                 </button>
+                <sec:authorize access="isAuthenticated()">
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <div class="topbar-divider d-none d-sm-block"></div>
@@ -110,9 +103,9 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small"><sec:authentication property="authorities"/></span>
                             <img class="img-profile rounded-circle"
-                                 src="img/undraw_profile.svg">
+                                 src="<c:url value="/theme/img/undraw_profile.svg"/>">
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -134,9 +127,14 @@
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout
                             </a>
+                            <form action="<c:url value="/logout"/>" method="post">
+                                <input class="fa fa-id-badge" type="submit" value="Wyloguj">
+                                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                            </form>
                         </div>
                     </li>
 
                 </ul>
+                </sec:authorize>
             </nav>
             <!-- End of Topbar -->
