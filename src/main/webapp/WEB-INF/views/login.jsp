@@ -45,16 +45,16 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                 </div>
-                                <form:form class="user" method="post" action="login">
+                                <form class="user" method="post" action="/login">
                                     <div class="form-group">
-                                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
                                         <input type="text" name="username" class="form-control form-control-user"
-                                               id="exampleInputEmail" aria-describedby="emailHelp"
-                                               placeholder="Enter Email Address...">
+                                               id="username" aria-describedby="emailHelp"
+                                               placeholder="Enter Username..." required="">
                                     </div>
                                     <div class="form-group">
                                         <input type="password" name="password" class="form-control form-control-user"
-                                               id="exampleInputPassword" placeholder="Password">
+                                               id="password" placeholder="Password" required="">
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox small">
@@ -63,9 +63,10 @@
                                                 Me</label>
                                         </div>
                                     </div>
-                                    <a href="index.html" type="submit" value="${_csrf.token}" class="btn btn-primary btn-user btn-block">
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                    <button type="submit" value="${_csrf.token}" class="btn btn-primary btn-user btn-block">
                                         Login
-                                    </a>
+                                    </button>
                                     <hr>
                                     <a href="index.html" class="btn btn-google btn-user btn-block">
                                         <i class="fab fa-google fa-fw"></i> Login with Google
@@ -73,7 +74,7 @@
                                     <a href="index.html" class="btn btn-facebook btn-user btn-block">
                                         <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                                     </a>
-                                </form:form>
+                                </form>
                                 <hr>
                                 <div class="text-center">
                                     <a class="small" href="forgot-password.html">Forgot Password?</a>
