@@ -50,20 +50,20 @@
         <!-- Nav Item - Dashboard -->
         </li>
         <li class="nav-item active">
-            <a href='<c:url value="/app/documents/all"/>' class="nav-link" >
+            <a href='<c:url value="/app/documents/all"/>' class="nav-link">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Documents</span></a>
         </li>
         <li class="nav-item active">
-        <a href='<c:url value="/app/faults/all"/>' class="nav-link" >
-        <i class="fas fa-fw fa-table"></i>
-        <span>Faults</span></a>
+            <a href='<c:url value="/app/faults/all"/>' class="nav-link">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Faults</span></a>
             <sec:authorize access="hasRole('ADMIN')">
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
 
         <li class="nav-item active">
-            <a href='<c:url value="/admin/panel"/>' class="nav-link" >
+            <a href='<c:url value="/admin/panel"/>' class="nav-link">
                 <i class="fas fa-fw fa-wrench"></i>
                 <span>Admin panel</span></a>
         </li>
@@ -72,10 +72,10 @@
         <hr class="sidebar-divider d-none d-md-block">
 
         <li class="nav-item active">
-        <form action="<c:url value="/logout"/>" method="post">
-            <input class="fa fa-id-badge" type="submit" value="Wyloguj">
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        </form>
+            <form action="<c:url value="/logout"/>" method="post">
+                <input class="fa fa-id-badge" type="submit" value="Wyloguj">
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            </form>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
@@ -102,7 +102,41 @@
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
                 </button>
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <div class="topbar-divider d-none d-sm-block"></div>
 
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                            <img class="img-profile rounded-circle"
+                                 src="img/undraw_profile.svg">
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                             aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Profile
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Settings
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Activity Log
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
 
+                </ul>
             </nav>
             <!-- End of Topbar -->
