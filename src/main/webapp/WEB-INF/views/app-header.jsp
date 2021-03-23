@@ -127,10 +127,7 @@
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout
                             </a>
-                            <form action="<c:url value="/logout"/>" method="post">
-                                <input class="fa fa-id-badge" type="submit" value="Wyloguj">
-                                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                            </form>
+
                         </div>
                     </li>
 
