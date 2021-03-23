@@ -40,23 +40,23 @@ public class FaultController {
         return "faults/all-all";
     }
 
-    @RequestMapping(value = "/documents/{id}/add", method = RequestMethod.GET)
-    public String showAddFaultForm(Model model, @PathVariable long id) {
-        model.addAttribute("faults", faultService.findAllByDocumentIdAndDeleted(id, false));
+    @RequestMapping(value = "/documents/{docId}/add", method = RequestMethod.GET)
+    public String showAddFaultForm(Model model, @PathVariable long docId) {
+        model.addAttribute("faults", faultService.findAllByDocumentIdAndDeleted(docId, false));
 
         Fault fault = new Fault();
 
         fault.setDeleted(false);
-        fault.setDocument(documentService.get(id).orElseThrow(EntityNotFoundException::new));
+        fault.setDocument(documentService.get(docId).orElseThrow(EntityNotFoundException::new));
         model.addAttribute("newFault", fault);
         model.addAttribute("subcontractors", subcontractorService.getSubcontractors());
         return "faults/add";
     }
 
-    @RequestMapping(value = "/documents/{id}/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/documents/{docId}/add", method = RequestMethod.POST)
     public String saveFault(@Valid Fault newFault, BindingResult result) {
 
-        newFault.setId(null);
+
         if (result.hasErrors()) {
             return "faults/add";
         }
