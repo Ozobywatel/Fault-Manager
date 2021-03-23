@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +58,7 @@
         <a href='<c:url value="/app/faults/all"/>' class="nav-link" >
         <i class="fas fa-fw fa-table"></i>
         <span>Faults</span></a>
-
+            <sec:authorize access="hasRole('ADMIN')">
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 
@@ -66,7 +67,16 @@
                 <i class="fas fa-fw fa-wrench"></i>
                 <span>Admin panel</span></a>
         </li>
+        </sec:authorize>
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
 
+        <li class="nav-item active">
+        <form action="<c:url value="/logout"/>" method="post">
+            <input class="fa fa-id-badge" type="submit" value="Wyloguj">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>
+        </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 
