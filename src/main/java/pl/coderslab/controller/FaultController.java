@@ -55,8 +55,7 @@ public class FaultController {
 
     @RequestMapping(value = "/documents/{docId}/add", method = RequestMethod.POST)
     public String saveFault(@Valid Fault newFault, BindingResult result) {
-
-
+        
         if (result.hasErrors()) {
             return "faults/add";
         }
