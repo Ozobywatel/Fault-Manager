@@ -60,7 +60,9 @@
                 </c:forEach>
                 <form:form method="post"
                            modelAttribute="newFault">
-                    <form:hidden path="document.id"/>
+                    <form:hidden path="document"/>
+                    <form:hidden path="deleted"/>
+
                     <tr>
                         <td>add new -></td>
                         <td><form:select class="form-control form-control-user" path="subcontractor"
