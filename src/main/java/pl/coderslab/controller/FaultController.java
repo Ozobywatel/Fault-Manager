@@ -87,5 +87,11 @@ public class FaultController {
         return "redirect:/app/faults/documents/" + idDoc + "/add";
     }
 
+    //DETAILS FROM FAULT LIST
+    @GetMapping("/details/{id}")
+    public String showBuilding(Model model, @PathVariable long id) {
+        model.addAttribute("fault", faultService.get(id).orElseThrow(EntityNotFoundException::new));
+        return "faults/details";
+    }
 
 }
