@@ -3,10 +3,7 @@ package pl.coderslab.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import pl.coderslab.model.Document;
 import pl.coderslab.model.Fault;
 import pl.coderslab.model.Subcontractor;
@@ -89,9 +86,26 @@ public class FaultController {
 
     //DETAILS FROM FAULT LIST
     @GetMapping("/details/{id}")
-    public String showBuilding(Model model, @PathVariable long id) {
+    public String showFault(Model model, @PathVariable long id) {
         model.addAttribute("fault", faultService.get(id).orElseThrow(EntityNotFoundException::new));
         return "faults/details";
     }
 
+    //EDIT FROM FAULT LIST
+    @GetMapping("/edit/{id}")
+    public String editFault(Model model, @PathVariable long id){
+        model.addAttribute("fault", faultService.getById(id));
+        return "faults/edit";
+    }
+
+    @PostMapping("/edit/{id}")
+    public String saveEditFault(@Valid Fault fault, BindingResult result) {
+
+        if (result.hasErrors()) {
+            return "faults/edit";
+        }
+        Long idDoc = fault.getDocument().getId();
+        faultService.add(fault);
+        return "redirect:/app/faults/documents/" + idDoc + "/add";
+    }
 }
