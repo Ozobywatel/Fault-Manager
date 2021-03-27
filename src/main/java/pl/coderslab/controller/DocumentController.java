@@ -84,6 +84,7 @@ public class DocumentController {
         if (result.hasErrors()) {
             return "documents/edit";
         }
+        document.setUpdated(LocalDateTime.now());
         documentService.add(document);
         return "redirect:/app/documents/all";
     }

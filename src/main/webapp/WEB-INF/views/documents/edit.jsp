@@ -13,6 +13,9 @@
 <c:url var="edit_url" value="/app/documents/edit"/>
 <form:form method="post" modelAttribute="document" action="${edit_url}">
     <form:hidden path="id"/>
+    <form:hidden path="created"/>
+    <form:hidden path="expirationDate"/>
+    <form:hidden path="updated"/>
     <div class="form-group">
         <div class="col-sm-6">
             <h5>Select User:</h5>

@@ -6,6 +6,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.model.Document;
 import pl.coderslab.model.Fault;
+import pl.coderslab.model.Project;
 import pl.coderslab.model.Subcontractor;
 import pl.coderslab.service.*;
 
@@ -91,14 +92,22 @@ public class FaultController {
         return "faults/details";
     }
 
+    @ModelAttribute("subcontractors")
+    public List<Subcontractor> getSubc(){
+        return subcontractorService.getSubcontractors();
+    }
+
     //EDIT FROM FAULT LIST
-    @GetMapping("/edit/{id}")
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
     public String editFault(Model model, @PathVariable long id){
+
         model.addAttribute("fault", faultService.getById(id));
         return "faults/edit";
     }
 
-    @PostMapping("/edit/{id}")
+
+
+    @RequestMapping(value = "/edit", method = RequestMethod.POST)
     public String saveEditFault(@Valid Fault fault, BindingResult result) {
 
         if (result.hasErrors()) {
