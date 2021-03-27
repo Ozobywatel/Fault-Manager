@@ -10,7 +10,7 @@ public class F404Controller {
     @RequestMapping("/404")
     public String show404Page() {
 
-        return "404";
+        return "errors/exception-page";
     }
 
 }
