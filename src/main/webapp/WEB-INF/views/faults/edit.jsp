@@ -7,7 +7,7 @@
 
 <div class="form-group">
     <div class="col-sm-6">
-        <h1 class="h4 text-gray-900 mb-4">Edit document form</h1>
+        <h1 class="h4 text-gray-900 mb-4">Edit fault form</h1>
     </div>
 </div>
 <c:url var="edit_url" value="/app/documents/edit"/>
