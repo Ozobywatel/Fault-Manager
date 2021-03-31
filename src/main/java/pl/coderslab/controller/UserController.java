@@ -45,7 +45,6 @@ public class UserController {
         if (result.hasErrors()) {
             return "users/add";
         }
-        user.setCreated(LocalDate.now());
         userService.add(user);
         return "redirect:/admin/users/all";
     }
