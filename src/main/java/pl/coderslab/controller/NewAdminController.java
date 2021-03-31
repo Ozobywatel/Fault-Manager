@@ -18,9 +18,11 @@ public class NewAdminController {
     @ResponseBody
     public String createUser() {
         User user = new User();
-        user.setUsername("admin");
-        user.setPassword("admin");
+        user.setUsername("user");
+        user.setPassword("user");
         userService.add(user);
-        return "admin";
+        return "user created";
     }
+
+
 }
