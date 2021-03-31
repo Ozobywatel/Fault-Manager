@@ -96,4 +96,4 @@
 <hr>
 
 
-<%@ include file="/WEB-INF/views/admin-footer.jsp" %>
+<%@ include file="/WEB-INF/views/footer.jsp" %>

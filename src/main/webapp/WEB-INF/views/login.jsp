@@ -80,7 +80,7 @@
                                     <a class="small" href="forgot-password.html">Forgot Password?</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="register.html">Create an Account!</a>
+                                    <a class="small" href='<c:url value="/register"/>'>Create an Account!</a>
                                 </div>
                             </div>
                         </div>
@@ -95,14 +95,14 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<c:url value="/static/theme/vendor/jquery/jquery.min.js"/>"></script>
+<script src="<c:url value="/static/theme/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="<c:url value="/static/theme/vendor/jquery-easing/jquery.easing.min.js"/>"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+<script src="<c:url value="/static/theme/js/sb-admin-2.min.js"/>"></script>
 
 </body>
 
