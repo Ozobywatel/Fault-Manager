@@ -14,6 +14,7 @@ public class NewAdminController {
     public NewAdminController(UserService userService) {
         this.userService = userService;
     }
+
     @GetMapping("/create-user")
     @ResponseBody
     public String createUser() {
@@ -22,6 +23,16 @@ public class NewAdminController {
         user.setPassword("user");
         userService.add(user);
         return "user created";
+    }
+
+    @GetMapping("/create-admin")
+    @ResponseBody
+    public String createAdmin() {
+        User user = new User();
+        user.setUsername("admin");
+        user.setPassword("admin");
+        userService.addAdmin(user);
+        return "admin account created. username: admin, password: admin";
     }
 
 
