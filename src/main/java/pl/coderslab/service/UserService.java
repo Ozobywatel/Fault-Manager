@@ -13,7 +13,7 @@ public interface UserService {
 
     Optional<User> get(Long id);
 
-    void delete(Long id);
+    void delete(String username);
 
     void update(User user);
 

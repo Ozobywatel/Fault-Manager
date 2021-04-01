@@ -28,18 +28,16 @@
                 <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Email</th>
-                    <th>First name</th>
-                    <th>Last name</th>
+                    <th>username</th>
+                    <th>enabled</th>
                     <th>Action</th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
                     <th>Id</th>
-                    <th>Email</th>
-                    <th>First name</th>
-                    <th>Last name</th>
+                    <th>username</th>
+                    <th>enabled</th>
                     <th>Action</th>
                 </tr>
                 </tfoot>
@@ -47,9 +45,8 @@
                 <c:forEach items="${users}" var="user">
                     <tr>
                         <td>${user.id}</td>
-                        <td>${user.email}</td>
-                        <td>${user.firstName}</td>
-                        <td>${user.lastName}</td>
+                        <td>${user.username}</td>
+                        <td>${user.enabled}</td>
                         <td>
                             <a href="<c:url value="/admin/users/details/${user.id}"/>" class="btn btn-info btn-icon-split">
                                         <span class="icon text-white-50">
@@ -63,7 +60,7 @@
                                         </span>
                                 <span class="text">Edit</span>
                             </a>
-                            <a href="<c:url value="/admin/users/delete/${user.id}"/>" class="btn btn-danger btn-icon-split">
+                            <a href="<c:url value="/admin/users/delete/${user.username}"/>" class="btn btn-danger btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-trash"></i>
                                         </span>

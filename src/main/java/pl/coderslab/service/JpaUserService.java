@@ -45,8 +45,11 @@ public class JpaUserService implements UserService {
     }
 
     @Override
-    public void delete(Long id) {
-        userRepository.deleteById(id);
+    public void delete(String username) {
+
+        User user = findByUserName(username);
+        user.setEnabled(0);
+        userRepository.save(user);
     }
 
     @Override
