@@ -19,4 +19,7 @@ public interface UserService {
 
     User findByUserName(String name);
 
+    void enable(String username);
+
+    void addAdmin(User user);
 }

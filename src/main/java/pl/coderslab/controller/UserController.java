@@ -64,16 +64,15 @@ public class UserController {
         return "redirect:/admin/users/all";
     }
 
-
     @GetMapping("/delete/{username}")
     public String deleteUser(Model model, @PathVariable String username) {
         userService.delete(username);
         return "redirect:/admin/users/all";
     }
 
-    @GetMapping("/details/{id}")
-    public String showUser(Model model, @PathVariable long id) {
-        model.addAttribute("user", userService.get(id).orElseThrow(EntityNotFoundException::new));
-        return "users/details";
+    @GetMapping("/enable/{username}")
+    public String enableUser(Model model, @PathVariable String username) {
+        userService.enable(username);
+        return "redirect:/admin/users/all";
     }
 }

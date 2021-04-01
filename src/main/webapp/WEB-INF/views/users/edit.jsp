@@ -13,26 +13,13 @@
 <c:url var="edit_url" value="/admin/users/edit"/>
 <form:form method="post" modelAttribute="user" action="${edit_url}">
     <form:hidden path="id"/>
-    <form:hidden path="created"/>
-    <div class="form-group">
-        <div class="col-sm-6">
-            <h5>First name:</h5>
-            <form:input type="text" class="form-control form-control-user" path="firstName"/>
-            <form:errors path="firstName"/><br/>
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-6">
-            <h5>Last name:</h5>
-            <form:input type="text" class="form-control form-control-user" path="lastName"/>
-            <form:errors path="lastName"/><br/>
-        </div>
-    </div>
+
+
     <div class="form-group">
         <div class="col-sm-6">
             <h5>e-mail address:</h5>
-            <form:input type="email" class="form-control form-control-user" path="email"/>
-            <form:errors path="email"/><br/>
+            <form:input type="text" class="form-control form-control-user" path="username"/>
+            <form:errors path="username"/><br/>
         </div>
     </div>
     <div class="form-group">
@@ -43,11 +30,6 @@
         </div>
     </div>
     <br/>
-    <div class="form-group">
-        <div class="col-sm-6">
-            <h5><form:checkbox path="adminRole"/>Do you want to new user had access to admin panel?</h5>
-        </div>
-    </div>
     <div class="form-group">
         <div class="col-sm-6 mb-3 mb-sm-0">
             <button type="submit" class="btn btn-primary btn-success btn-block" value="Save">

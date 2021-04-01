@@ -48,12 +48,7 @@
                         <td>${user.username}</td>
                         <td>${user.enabled}</td>
                         <td>
-                            <a href="<c:url value="/admin/users/details/${user.id}"/>" class="btn btn-info btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-info-circle"></i>
-                                        </span>
-                                <span class="text">Details</span>
-                            </a>
+
                             <a href="<c:url value="/admin/users/edit/${user.id}"/>" class="btn btn-warning btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-arrow-right"></i>
@@ -65,6 +60,12 @@
                                             <i class="fas fa-trash"></i>
                                         </span>
                                 <span class="text">Delete</span>
+                            </a>
+                            <a href="<c:url value="/admin/users/enable/${user.username}"/>" class="btn btn-success btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-trash"></i>
+                                        </span>
+                                <span class="text">Enable</span>
                             </a>
                         </td>
                     </tr>

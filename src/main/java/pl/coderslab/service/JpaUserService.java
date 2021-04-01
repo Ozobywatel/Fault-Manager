@@ -40,6 +40,15 @@ public class JpaUserService implements UserService {
     }
 
     @Override
+    public void addAdmin(User user) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setEnabled(1);
+        Role userRole = roleRepository.findByName("ROLE_ADMIN");
+        user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
+        userRepository.save(user);
+    }
+
+    @Override
     public Optional<User> get(Long id) {
         return userRepository.findById(id);
     }
@@ -49,6 +58,13 @@ public class JpaUserService implements UserService {
 
         User user = findByUserName(username);
         user.setEnabled(0);
+        userRepository.save(user);
+    }
+    @Override
+    public void enable(String username) {
+
+        User user = findByUserName(username);
+        user.setEnabled(1);
         userRepository.save(user);
     }
 
