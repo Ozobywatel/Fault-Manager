@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Fault Manager - home</title>
 
     <!-- Custom fonts for this template-->
     <link href="<c:url value="/theme/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet" type="text/css">
@@ -24,11 +24,26 @@
 </head>
 <body>
 
+
+
 <sec:authorize access="isAnonymous()">
+<h1>WELCOME! On my app "Fault Manager"!</h1><br/>
+<h4>This app was created to help engineers on construction site to manage all faults, fails or issues that arose during construction process.
+<br/>
+Please log in to check out the application. If you don't have an account yet, you should register first.
+<br/>
+Enjoy!</h4>
+
 <a class="btn btn-primary btn-user btn-block" href="<c:url value="/login"/>">Login</a>
+
+<a class="btn btn-primary btn-user btn-block" href="<c:url value="/register"/>">Register</a>
 </sec:authorize>
 <br/>
 <sec:authorize access="isAuthenticated()">
+    <h1>Good! You have successfully logged in to my app "Fault Manager"!</h1><br/>
+    <h4>Checkout your possibilities below:</h4>
+
+
 <a class="btn btn-primary btn-user btn-block" href="<c:url value="/app/dash"/>">Application Fault Manager ---></a>
 </sec:authorize>
 <br/>
