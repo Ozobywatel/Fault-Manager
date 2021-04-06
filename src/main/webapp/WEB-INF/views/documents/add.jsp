@@ -17,7 +17,7 @@
         <div class="col-sm-6">
             <h5>Select User:</h5>
             <form:select class="form-control form-control-user" path="user"
-                        items="${users}" itemLabel="lastName" itemValue="id"/>
+                        items="${users}" itemLabel="username" itemValue="id"/>
             <form:errors path="user"/><br/>
         </div>
     </div>
