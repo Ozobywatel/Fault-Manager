@@ -5,26 +5,12 @@
 
 
 <div class="container-fluid">
-    <h3>Shortcuts:</h3>
+    <h3>Shortcut:</h3>
     <a href='<c:url value="/app/documents/add"/>' class="btn btn-secondary btn-icon-split">
          <span class="icon text-white-50">
          <i class="fas fa-arrow-right"></i>
          </span>
         <span class="text"> Add new document </span>
-    </a>
-    <br/>
-    <a href='<c:url value="/app/buildings/add"/>' class="btn btn-secondary btn-icon-split">
-         <span class="icon text-white-50">
-         <i class="fas fa-arrow-right"></i>
-         </span>
-        <span class="text"> Add new building </span>
-    </a>
-    <br/>
-    <a href='<c:url value="/app/buildings/add"/>' class="btn btn-secondary btn-icon-split">
-         <span class="icon text-white-50">
-         <i class="fas fa-arrow-right"></i>
-         </span>
-        <span class="text"> Add new building </span>
     </a>
     <br/>
     <br/>

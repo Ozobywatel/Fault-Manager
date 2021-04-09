@@ -8,10 +8,10 @@
 <div class="form-group">
     <div class="col-sm-6">
         <h1 class="h4 text-gray-900 mb-4">Inspection document edit form</h1>
-        <%--            <br/> Document id: <c:out value="${document.id}"/>--%>
-        <%--            <br/> Building name: <c:out value="${document.building.buildingName}"/>--%>
-        <%--            <br/> Unit number: <c:out value="${document.unitNumber}"/>--%>
-        <%--            <br/> Expiration date: <c:out value="${document.expirationDate}"/>--%>
+                    <br/> Document id: ${document.id}
+                    <br/> Building name: <c:out value="${document.building.buildingName}"/>
+                    <br/> Unit number: <c:out value="${document.unitNumber}"/>
+                    <br/> Expiration date: <c:out value="${document.expirationDate}"/>
     </div>
 </div>
 

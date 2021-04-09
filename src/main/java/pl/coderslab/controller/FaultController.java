@@ -46,6 +46,7 @@ public class FaultController {
 
         fault.setDeleted(false);
         fault.setDocument(documentService.get(docId).orElseThrow(EntityNotFoundException::new));
+        model.addAttribute("document", documentService.get(docId).orElseThrow(EntityNotFoundException::new));
         model.addAttribute("newFault", fault);
         model.addAttribute("subcontractors", subcontractorService.getSubcontractors());
         return "faults/add";
