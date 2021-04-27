@@ -51,12 +51,9 @@
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <form:input type="password" class="form-control form-control-user"
                                            placeholder="Password" path="password"/>
-                                    <form:errors path="username"/><br/>
+                                    <form:errors path="password"/><br/>
                                 </div>
-<%--                                <div class="col-sm-6">--%>
-<%--                                    <input type="password" class="form-control form-control-user"--%>
-<%--                                           id="exampleRepeatPassword" placeholder="Repeat Password">--%>
-<%--                                </div>--%>
+
                             </div>
                             <button type="submit" class="btn btn-primary btn-user btn-block">
                                 Register Account
